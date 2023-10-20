@@ -1,0 +1,11 @@
+{
+    "name" : "benchmark_output",
+    "executable" :  "/PATH_TODO/benchmark_wrapper.sh",
+    "configs" : "benchmark_configs.txt",
+    "instances" : "instances.txt",
+    "timeout" : 900,
+    "mem_limit" : 210000,
+    "request_cpus" : 12,
+    "working_dir" : ".",
+    "exclusive": true
+}

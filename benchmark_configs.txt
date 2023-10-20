@@ -1,0 +1,6 @@
+--algo d4
+--algo miniC2D
+--algo dpmc
+--algo sharpsat_marcthurley
+--algo sharpsat_td
+--algo ganak

@@ -1,0 +1,68 @@
+{
+  "miniC2D": {
+    "path": "bin/miniC2D/miniC2D-1.0.0/bin/linux/miniC2D",
+    "args": "-i -C -c",
+    "output_parser": {
+      "class": "RegExReader",
+      "args": {
+        "pattern": "Counting... (\\d+) models"
+      },
+      "result": "result"
+    }
+  },
+  "d4": {
+    "path": "bin/d4/d4",
+    "args": "-mc",
+    "output_parser": {
+      "class": "RegExReader",
+      "args": {
+        "pattern": "s (\\d+)\\n"
+      },
+      "result": "result"
+    }
+  },
+  "sharpsat_td": {
+    "path": "bin/sharpsat-td/bin/sharpSAT",
+    "args": "-decot 30 -decow 100 -tmpdir . -cs 39500",
+    "output_parser": {
+      "class": "RegExReader",
+      "args": {
+        "pattern": "c s exact arb int (\\d+)\\n"
+      },
+      "result": "result"
+    }
+  },
+  "sharpsat_marcthurley": {
+    "path": "bin/sharpSAT/build/Release/sharpSAT",
+    "args": "-cs 39500",
+    "output_parser": {
+      "class": "RegExReader",
+      "args": {
+        "pattern": "# solutions \\n(\\d+)\\n"
+      },
+      "result": "result"
+    }
+  },
+  "ganak": {
+    "path": "bin/ganak/build/ganak",
+    "args": "-cs 39500 -noPCC",
+    "output_parser": {
+      "class": "RegExReader",
+      "args": {
+        "pattern": "s pmc (\\d+)\\n"
+      },
+      "result": "result"
+    }
+  },
+  "dpmc": {
+    "path": "python3",
+    "args": "bin/DPMC/mcc/bin/driver.py --task wmc --cluster tu --mp 1 --maxrss=80",
+    "output_parser": {
+      "class": "RegExReader",
+      "args": {
+        "pattern": "c s exact arb frac (\\d+)\\n"
+      },
+      "result": "result"
+    }
+  }
+}
